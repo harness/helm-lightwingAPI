@@ -3,6 +3,23 @@ entries:
   lwd:
   - apiVersion: v2
     appVersion: 1.773.0
+    created: "2022-11-17T07:09:48.60160909Z"
+    dependencies:
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: A Helm chart for Kubernetes
+    digest: 2d234280824e6b9ab1e5d8e7a710d9a22c6a4a4b82eead1fd8631131ec26e66a
+    name: lwd
+    type: application
+    urls:
+    - https://github.com/harness/helm-lightwingAPI/releases/download/lwd-0.1.2/lwd-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.773.0
     created: "2022-11-17T06:45:28.934135238Z"
     dependencies:
     - name: harness-common
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://github.com/harness/helm-lightwingAPI/releases/download/lwd-0.1.1/lwd-0.1.1.tgz
     version: 0.1.1
-generated: "2022-11-17T06:45:28.934139438Z"
+generated: "2022-11-17T07:09:48.60161879Z"
