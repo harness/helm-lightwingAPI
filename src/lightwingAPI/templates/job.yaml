@@ -62,7 +62,7 @@ spec:
           - name: LIGHTWING_DB_CONNECTION
             value: "host=postgres.{{ .Release.Namespace }}.svc.cluster.local user=postgres password=$(DB_PASSWORD) dbname=postgres sslmode=disable"
           - name: FAKTORY_URL
-            value: tcp://:{{ .Values.lwdSecrets.faktoryPassword }}@lw-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
+            value: tcp://:{{ .Values.lwdSecrets.faktoryPassword }}@lwd-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
           - name: LIGHTWING_CACHE_ADDR
             value: {{ .Values.redisUrl }}
           - name: LIGHTWING_CLOUD-CONNECTOR_TYPE
