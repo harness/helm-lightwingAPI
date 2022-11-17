@@ -41,6 +41,12 @@ spec:
         args:
           - "pod"
           - "-lapp=nextgen-ce"
+      - name: wait-for-postgres
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+        imagePullPolicy: IfNotPresent
+        args:
+          - "pod"
+          - "-lapp=postgres"
       containers:
         - name: lwd
           securityContext:
