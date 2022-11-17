@@ -152,8 +152,13 @@ spec:
                   key: {{ .Values.postgresPassword.key }}
             - name: LIGHTWING_DB_CONNECTION
               value: "host=postgres.{{ .Release.Namespace }}.svc.cluster.local user=postgres password=$(DB_PASSWORD) dbname=postgres sslmode=disable"
+            - name: FAKTORY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.lwdSecrets.secretName }}
+                  key: {{ .Values.lwdSecrets.faktoryPassword }}
             - name: FAKTORY_URL
-              value: tcp://:{{ .Values.lwdSecrets.faktoryPassword }}@lwd-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
+              value: tcp://$(FAKTORY_PASSWORD):@lwd-faktory.{{ .Release.Namespace }}.svc.cluster.local:7419
           volumeMounts:
           - name: secret-mount
             mountPath: /opt/harness/svc
