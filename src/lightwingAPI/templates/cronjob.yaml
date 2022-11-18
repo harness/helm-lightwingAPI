@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: lightwing-ingest-price-list-{{ lower ( randAlphaNum 6 ) }}
@@ -81,7 +81,7 @@ spec:
                     key: {{ .Values.lwdSecrets.lightwingAwsGovmasterSecretKey }}      
           restartPolicy: Never
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: lightwing-compute-savings-{{ lower ( randAlphaNum 6 ) }}
@@ -178,7 +178,7 @@ spec:
                 path: ce_batch_gcp_credentials.json
           restartPolicy: Never
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: lightwing-extract-coverage-{{ lower ( randAlphaNum 6 ) }}
