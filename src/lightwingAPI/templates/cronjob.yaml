@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
           - name: lightwing-ingest-price-list
-            image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+            image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
             command: ["lwd", "ingest-price-list", "--verbose"]
             env:
               - name: DB_PASSWORD
@@ -99,7 +99,7 @@ spec:
         spec:
           containers:
           - name: lightwing-compute-svaings
-            image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+            image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
             command: ["lwd", "compute-savings", "--verbose"]
             env:
               - name: DB_PASSWORD
@@ -196,7 +196,7 @@ spec:
         spec:
           containers:
           - name: lightwing-extract-coverage
-            image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+            image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
             command: ["lwd", "extract-coverage", "--verbose"]
             env:
               - name: DB_PASSWORD
