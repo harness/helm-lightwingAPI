@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: lwd
-        image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
         command: ["lwd","migrate"]
         env:
           - name: DB_PASSWORD
@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: lwd
-        image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
         command: ["lwd","rebuild-search-index"]
         env:
           - name: DB_PASSWORD
